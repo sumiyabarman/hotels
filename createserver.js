@@ -1,16 +1,18 @@
+
 const express = require('express');
 const app = express();
-const port = 3000
 const db=require('./db');
+require('dotenv').config();
 const bodyParser=require('body-parser');
 app.use(bodyParser.json()); //req.body te store kore 
 //import the router files
+const PORT =process.env.PORT||3000;
 const personroute=require('./route/Personroute');
-//use the routers
+//use the router 
 app.use('/person',personroute);
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`);
+});
 
 
 
