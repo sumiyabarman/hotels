@@ -6,11 +6,11 @@ require('dotenv').config();
 const mongoURL =process.env.MONGODB_URL;
 // const mongourl_local= process.env.MONGODB_URL_LOCAL;
 //setup mongodb connection 
-mongoose.connect(mongoURL,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-})
-
+// mongoose.connect(mongoURL,{
+//     useNewUrlParser:true,
+//     useUnifiedTopology:true
+// })
+mongoose.connect(mongoURL);
 //get the default connection
 //mongoose maintain a default connection object representing the mongodb connection
 const db =mongoose.connection;

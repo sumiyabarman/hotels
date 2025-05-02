@@ -7,6 +7,9 @@ const bodyParser=require('body-parser');
 app.use(bodyParser.json()); //req.body te store kore 
 //import the router files
 const PORT =process.env.PORT||3000;
+app.get('/',function(req,res){
+  res.send("welcome to our hotel");
+})
 const personroute=require('./route/Personroute');
 //use the router 
 app.use('/person',personroute);
